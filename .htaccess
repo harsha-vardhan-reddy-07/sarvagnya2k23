@@ -1,0 +1,17 @@
+Options -indexes
+
+
+RewriteEngine On
+
+RewriteRule ^home index.php [NC,L]
+RewriteRule ^events events.php [NC,L]
+RewriteRule ^registrations registrations.php [NC,L]
+RewriteRule ^gallery-2009 gallery_2009.php [NC,L]
+RewriteRule ^gallery-2013 gallery_2013.php [NC,L]
+RewriteRule ^gallery-2014 gallery_2014.php [NC,L]
+RewriteRule ^gallery-2015 gallery_2015.php [NC,L]
+RewriteRule ^gallery-2016 gallery_2016.php [NC,L]
+
+RewriteRule ^cuisines cuisines.php [NC,L]
+RewriteRule ^login-page login-page.php [NC,L]
+RewriteRule ^profile profile.php [NC,L]

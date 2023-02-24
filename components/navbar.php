@@ -1,9 +1,9 @@
 <nav class="navbar navbar-toggleable-sm bg-inverse navbar-inverse fixed-top shadow-sm  bg-white"
-    style="background-color:#ffffff !important;border-bottom: 1px red dotted;">
+    style="background: linear-gradient(0deg, #0B021B, #0B021B) !important; color: #fff;">
     <div class="p-2 bd-highlight logo-box"><a href="<?php echo $base_url; ?>/index.php"
             style="text-decoration:none;"><img src="assets/images/logo2.png" width="40" height="40" alt="logo"><img
                 src="assets/images/logo3.gif" width="250" height="50" alt="logo"></a></div>
-    <div class="bd-highlight col-md-6 search-box text-center">
+    <div class="bd-highlight col-md-6 search-box text-center" style="color: #fff;">
         <a class="nav_link <?= (basename($_SERVER['PHP_SELF'])=="index.php")?"active":""; ?> mx-2" href="index.php">
             Home</a>
         <a class="nav_link <?= (basename($_SERVER['PHP_SELF'])=="events.php")?"active":""; ?> mx-2" href="events.php">

@@ -19,3 +19,7 @@ body {
     color: #ffffff !important;
     font-size: 18px;
 }
+@font-face {
+    font-family: blackpast;
+    src: url('../fonts/blackpastdemo-vm2l9-webfont.woff');
+  }

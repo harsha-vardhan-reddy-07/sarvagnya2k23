@@ -1,4 +1,4 @@
-<footer id="footer" style="background: #171a29;">
+<footer id="footer" style="background: #171a29; z-index: 2; position:relative;">
     <div class="footer-top">
         <div class="container">
             <div class="row">

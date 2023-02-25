@@ -23,3 +23,7 @@ body {
     font-family: blackpast;
     src: url('../fonts/blackpastdemo-vm2l9-webfont.woff');
   }
+  @font-face {
+    font-family: researcher;
+    src: url('../fonts/researcher-researcher-regular-400-webfont.woff');
+  }

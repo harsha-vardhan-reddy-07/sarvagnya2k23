@@ -5,19 +5,19 @@
 
                 <div class="col-lg-3 col-md-6">
                     <a class="navbar-brand font-weight-bold" href="index.php">Sarvagnya<span
-                            style="color:#fff;">2022</span> </a>
+                            style="color:#fff;">2023</span> </a>
                     <div class="social-links">
 
                         <a target="_blank" aria-label="Twitter"
-                            href="https://www.facebook.com/profile.php?id=100079635271518" class="facebook"> <i
-                                class="fa fa-facebook"></i></a>
+                            href="https://twitter.com/Sarvagnya_2K23" class="facebook"> <i
+                                class="fa fa-twitter"></i></a>
                         <a target="_blank" aria-label="Twitter"
-                            href="https://instagram.com/sarvagnya_2k22?utm_medium=copy_link" class="instagram"> <i
+                            href="https://www.instagram.com/p/Co_uJL9P50E/?igshid=YmMyMTA2M2Y=" class="instagram"> <i
                                 class="fa fa-instagram"></i></a>
-                        <a target="_blank" aria-label="Twitter" href="mailto:sarvagnya2k22cse@gmail.com"
+                        <a target="_blank" aria-label="Twitter" href="mailto:sarvagnya2k23cse@gmail.com"
                             class="google-plus"> <i class="fa fa-envelope"></i></a>
                         <a target="_blank" aria-label="Twitter"
-                            href="https://youtube.com/channel/UCWWF-JKepQBQX1oZ8KpnDgw" class="linkedin"> <i
+                            href="https://youtube.com/@sarvagnya_2k23" class="linkedin"> <i
                                 class="fa fa-youtube"></i></a>
                     </div>
 
@@ -59,7 +59,6 @@
                         <li><a href="<?php echo $base_url ?>/registrations.php">Registrations</a></li>
                         <li><a href="<?php echo $base_url ?>/profile">Profile</a></li>
                         <li><a href="<?php echo $base_url ?>/about_us.php">About Us</a></li>
-                        <li><a href="<?php echo $base_url ?>/sponsors.php">Sponsors</a></li>
                         <li><a href="<?php echo $base_url ?>/contact_us.php">Contact Us</a></li>
                   
                     </ul>
@@ -71,8 +70,8 @@
     <hr style="background-color: rgb(187, 187, 187);">
     <div class="container">
         <div class="copyright-virtual text-center">
-            &copy; <?php echo date('Y') ?> Copyright <strong><a href="<?php echo $base_url ?>/"
-                    style="color:#fff;">sarvagnya2k22.in</a></strong>. All Rights Reserved
+            &copy; <?php echo date('Y') ?> Copyright <strong><a href="https://sarvagnya2k23.in/"
+                    style="color:#fff;">sarvagnya2k23.in</a></strong>. All Rights Reserved
         </div>
     </div>
 </footer>

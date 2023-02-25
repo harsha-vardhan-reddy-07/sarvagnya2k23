@@ -22,10 +22,44 @@ require_once 'components/database.php';
 
 
     <style>
+
+    body{
+        background: rgb(70,5,48);
+        background: linear-gradient(-45deg, rgba(70,5,48,1) 0%, rgba(0,0,0,1) 38%, rgba(17,32,72,1) 99%);
+        
+    }
+
+    .profile-page-table{
+        color: #abadb0; 
+        background-color: transparent;
+        
+    }
+    .profile-page-table td, .profile-page-table th{
+        border: 1px solid #575756;
+        
+    }
+    
+
+
     @media screen and (max-width: 576px) and (min-width: 0px) {
         .desktop-only {
             display: none;
         }
+        .profile-page-table td, .profile-page-table th{
+            border: none;
+        }
+        .profile-img img{
+            height: 200px;
+            width: 200px;
+        }
+        .profile-qr img{
+            height: 120px;
+            width: 120px;
+        }
+        .desktop-only-name{
+            font-size: 150%;
+        }
+
     }
 
     @media (min-width: 1025px) {
@@ -124,26 +158,26 @@ require_once 'components/database.php';
 
 
     <div class="container" style="margin-top: 100px;margin-bottom:20px;">
-        <div class=" card shadow-sm p-3 mb-5 bg-white rounded">
+        <div class=" card shadow-sm p-3 mb-5 rounded" style="background-color: #eff5ff21;">
             <div class="row justify-content-center">
 
-                <div class="col-md-3 text-center">
-                    <img src="<?php echo $_SESSION['picture']; ?>" class="mb-3" width="150" height="150" alt="PICTURE">
+                <div class="col-md-3 text-center profile-img">
+                    <img style="border-radius: 50%; border: 2px #1d2230 solid;" src="<?php echo $_SESSION['picture']; ?>" class="mb-3" width="150" height="150" alt="PICTURE" >
                 </div>
 
-                <div class="col-md-2 text-center">
-                    <img src="<?php echo $_SESSION['qr_code']; ?>" class="mb-3" width="150" height="150" alt="Qr code">
+                <div class="col-md-2 text-center profile-qr">
+                    <img style="opacity: 0.6; border-radius: 1rem;" src="<?php echo $_SESSION['qr_code']; ?>" class="mb-3" width="150" height="150" alt="Qr code">
                 </div>
                 <div class="col-md-7 text-center">
-                    <table class="table table-hover table-bordered">
+                    <table class="table table-hover table-bordered table-dark profile-page-table">
                         <tbody>
 
                             <tr>
-                                <td><b>NAME : </b></td>
-                                <td><?php echo $_SESSION['name']; ?></td>
+                                <td class="desktop-only"  ><b>NAME : </b></td>
+                                <td class="desktop-only-name"><?php echo $_SESSION['name']; ?></td>
                             </tr>
                             <tr>
-                                <td><b>EMAIL : </b></td>
+                                <td class="desktop-only"  ><b>EMAIL : </b></td>
                                 <td><?php echo $_SESSION['email']; ?></td>
                             </tr>
                         </tbody>
@@ -171,7 +205,7 @@ require_once 'components/database.php';
 
 
                         <div class="d-flex justify-content-between">
-                            <h4><i class="fa fa-list-alt" aria-hidden="true"></i>&nbsp; Profile Details </h4>
+                            <h4 style="color: #abadb0;"><i class="fa fa-list-alt" aria-hidden="true" ></i>&nbsp; Profile Details </h4>
 
                             <!-- <button class="btn btn-outline-success" data-toggle="modal" data-target="#add_details">Add
                                 Data</button> -->
@@ -192,8 +226,8 @@ require_once 'components/database.php';
                     ?>
 
                         <div class="table-responsive text-nowrap">
-                            <table class="table table-bordered table-striped text-center">
-                                <thead style="background-color:#55198B !important;color:#fff !important;">
+                            <table class="table table-bordered table-striped text-center table-dark" style="background-color: transparent;">
+                                <thead style="background-color:#cecece3a !important;color:#cecece !important;">
                                     <tr>
                                         <th>College Name</th>
                                         <th>Branch</th>
@@ -214,7 +248,7 @@ require_once 'components/database.php';
                     {
 
                     ?>
-                                    <tr>
+                                    <tr style="color: #abadb0;">
                                         <td><?php echo $row['college_name'];?></td>
                                         <td><?php echo $row['branch'];?></td>
                                         <td><?php echo $row['year'];?></td>
@@ -222,7 +256,7 @@ require_once 'components/database.php';
                                         <td><?php echo $row['mobile'];?></td>
                                         <td><?php echo $row['github'];?></td>
                                         <td><?php echo $row['linkedin'];?></td>
-                                        <td><button type="button" class="btn btn-info update_details">Edit</button></td>
+                                        <td><button type="button" class="btn btn-info update_details" style="background-color: #dae2ff34; border-color: #abadb036;">Edit</button></td>
                                     </tr>
                                     <?php
                     }
@@ -469,9 +503,12 @@ require_once 'components/database.php';
     <?php require_once 'components/footer.php'; ?>
     <!-------- categories End-------->
 
+<!-- navbar visibility -->
 
-    <!-------- Mobile nav-------->
-    <?php require_once 'components/mobile-nav.php' ?>
+<script>
+    const navbar = document.querySelector('#navbar');
+    navbar.classList.add('visible');
+</script>
 
 </body>
 

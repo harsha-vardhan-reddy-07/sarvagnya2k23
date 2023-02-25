@@ -37,6 +37,7 @@ require_once "components/database.php";
         }
          */
     }
+    
     .techEve_bg_video{
         object-fit: cover;
         position: absolute;
@@ -88,6 +89,9 @@ require_once "components/database.php";
         .btn-register-accomodation, .btn-register-all{
             width: 250px;
         }
+        .btn-register-all{
+            margin-top: 5%;
+        }
     }
     
 
@@ -122,7 +126,7 @@ require_once "components/database.php";
         /* visibility: hidden; */
         height: 0;
         color: rgba(217, 218, 219, 0.7);
-        transition: height 1.5s ease;
+        transition: height 1s ease;
         overflow: hidden;
         /* transition: visibility 1s ease 2s; */
         
@@ -136,7 +140,7 @@ require_once "components/database.php";
     .card:hover .card-data{
         /* visibility: visible; */
         height: 350px;
-        transition: height 2s ease;
+        transition: height 1s ease;
         overflow: hidden;
         /* transition: visibility 1s ease 2s; */
 
@@ -349,7 +353,7 @@ else{
 
 
 
-        <br>
+       
 
 
         <!-- Modal -->
@@ -581,7 +585,7 @@ else{
 
 
 
-    <div class="container_techEve container">
+    <div id="workshops-regi" class="container_techEve container">
         <div class="">
             <h2 class="title_tech_Eves">Workshops</h2>
             <br>
@@ -760,7 +764,7 @@ else{
                 ?>
 
 
-            <div class="col-md-4">
+            <div class="col-md-4 " >
 
 
                 <div class="card my-2">
@@ -875,7 +879,7 @@ else{
 
     <br>
 
-    <div class="container_techEve container">
+    <div id="technical-regi" class="container_techEve container">
 
         <hr>
 
@@ -1009,12 +1013,16 @@ else{
 
 
     <?php require_once 'components/footer.php'; ?>
-    <!-------- Mobile nav-------->
-
-    <?php require_once 'components/mobile-nav.php'; ?>
 
 </div>
 
+
+<!-- navbar visibility -->
+
+<script>
+    const navbar = document.querySelector('#navbar');
+    navbar.classList.add('visible');
+</script>
 
 </body>
 

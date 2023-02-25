@@ -52,7 +52,7 @@ $_SESSION['qr_code'] = $url;
 
 	//  insert blank user details
 
-	 $query1="INSERT INTO `user_details` (`id`, `college_name`, `branch`, `year`, `address`, `mobile`, `github`, `linkedin`) VALUES ('$id', 'update', 'update','update', 'update', 'update', 'update', 'update')";
+	 $query1="INSERT INTO `user_details` (`id`, `college_name`, `branch`, `year`, `address`, `mobile`, `github`, `linkedin`) VALUES ('$id', '-', '-','-', '-', '-', '-', '-')";
 	 $query_run1=mysqli_query($connection,$query1);
 	
 

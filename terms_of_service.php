@@ -14,7 +14,7 @@ require_once "components/database.php";
 <html lang="en">
 
 <head>
-    <title>Sarvagnya - 2022</title>
+    <title>Sarvagnya - 2023</title>
 
     <?php require_once 'components/links.php'; ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -43,7 +43,7 @@ require_once "components/database.php";
         <h2 class="text-dark text-center title">TERMS AND CONDITIONS</h2>
         <br>
         <p>These Terms and Conditions out line the rules and regulations for the use of Sarvagnya Website , Located at
-            <a href="https://sarvagnya2k22.in">https://sarvagnya2k22.in</a>
+            <a href="https://sarvagnya2k23.in">https://sarvagnya2k23.in</a>
         </p>
         <p>By accessing this website we assume you accept these terms and conditions. Don't continue to use Sarvagnya if
             don't agree to take all of the terms and condition stated on this page.</p>
@@ -79,7 +79,7 @@ require_once "components/database.php";
             Terms</p>
         <h3 class="text-dark  title">Contact Us</h3>
         <p>If you have any questions or comments regarding these Terms or our Privacy Policy, you can contact us at:
-            sarvganya2k22cse@gmail.com</p>
+            sarvganya2k23cse@gmail.com</p>
     </div>
 
 
@@ -96,9 +96,14 @@ require_once "components/database.php";
 
 
     <?php require_once 'components/footer.php'; ?>
-    <!-------- Mobile nav-------->
 
-    <?php require_once 'components/mobile-nav.php'; ?>
+
+    <!-- navbar visibility -->
+
+<script>
+    const navbar = document.querySelector('#navbar');
+    navbar.classList.add('visible');
+</script>
 
 
 </body>

@@ -19,18 +19,31 @@ if (!$auth) {
 </head>
 <style>
 
+body{
+    background: rgb(70,5,48);
+    background: linear-gradient(-45deg, rgba(70,5,48,1) 0%, rgba(0,0,0,1) 38%, rgba(17,32,72,1) 99%);
+        
+}
+
 .form-modal{
     position:relative;
+    top: 10vh;
     width:450px;
     height:auto;
+    padding: 2% 2% 2% 2%;
     margin-top:4em;
     left:50%;
     transform:translateX(-50%);
-    background:#fff;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.1)
+    /* background:#fff;
+    border-radius: 1rem;
+    box-shadow:0 3px 20px 0px rgba(0, 0, 0, 0.1) */
+    background: rgba(255, 255, 255, 0.119);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1;
+    transform: 0.5s;
+    color: #fff;
 }
 
 .form-modal button{
@@ -40,7 +53,6 @@ if (!$auth) {
     font-size:1em;
     z-index: 2;
     outline: none;
-    background:#fff;
     transition:0.2s;
 }
 
@@ -53,7 +65,7 @@ if (!$auth) {
     transition:0.5s;
     border:1px solid #ebebeb;
     margin-bottom:0.5em;
-    margin-top:0.5em;
+    margin-top:0.2em;
 }
 
 .form-modal .login , .form-modal .signup{
@@ -69,24 +81,30 @@ if (!$auth) {
     position: relative;
     width:100%;
     height:auto;
+    text-align: center;
 }
 
 .form-toggle button{
     width:100%;
-    float:left;
-    padding:1.5em;
-    margin-bottom:1.5em;
+    
+    margin: 7% 0 3% 0;
     border:none;
-    transition: 0.2s;
-    font-size:1.1em;
+    font-size:1.5rem;
     font-weight: bold;
-    border-radius: 20px;
+    
+}
+.login-sarva-logo{
+    font-family: researcher;
+    font-size: 1.5rem;
+    color: #ffffffdf;
     
 }
 
-#login-toggle{
-    background:#fff;
-    color:#57b846;
+#loginator{
+    color:#57b846e6;
+    margin: 12% 0 5% 0;
+    font-size:1.5rem;
+    font-weight: bold;
 }
 
 .form-modal form{
@@ -108,53 +126,28 @@ if (!$auth) {
 
 #login-form button {
     width:100%;
-    margin-top:0.5em;
+    margin-top:0.1em;
     padding:0.6em;
 }
 
-.form-modal input{
-    position: relative;
-    width:100%;
-    font-size:1em;
-    padding:1.2em 1.7em 1.2em 1.7em;
-    margin-top:0.6em;
-    margin-bottom:0.6em;
+.google-login-btn{
+    background-color: #e3e3e317;
+    border: 1px solid #e3e3e317;
     border-radius: 20px;
-    border:none;
-    background:#ebebeb;
-    outline:none;
-    font-weight: bold;
-    transition:0.4s;
 }
-
-.form-modal input:focus , .form-modal input:active{
-    transform:scaleX(1.02);
+.google-login-btn:hover{
+    background-color: #e3e3e32e;
 }
-
-.form-modal input::-webkit-input-placeholder{
-    color:#222;
+.google-login-btn-text{
+    color: #ffffffb3;
 }
 
 
-.form-modal p{
-    font-size:16px;
-    font-weight: bold;
-}
-
-.form-modal p a{
-    color:#57b846;
-    text-decoration: none;
-    transition:0.2s;
-}
-
-.form-modal p a:hover{
-    color:#222;
-}
 
 
 .form-modal i {
     position: absolute;
-    left:10%;
+    left:20%;
     top:50%;
     transform:translateX(-10%) translateY(-50%); 
 }
@@ -163,21 +156,18 @@ if (!$auth) {
     color:#dd4b39;
 }
 
-.fa-linkedin{
-    color:#3b5998;
-}
 
-.fa-windows{
-    color:#0072c6;
-}
-
-.-box-sd-effect:hover{
-    box-shadow: 0 4px 8px hsla(210,2%,84%,.2);
-}
 
 @media only screen and (max-width:500px){
     .form-modal{
         width:100%;
+        top: 20vh;
+    }
+    .login-sarva-logo{
+        margin: 2% 0 0 2%;
+    }
+    .form-toggle button{
+        margin: 15% 0 3% 0;
     }
 }
 
@@ -190,20 +180,24 @@ if (!$auth) {
     }
 }
 
+
+
+
+
 </style>
 <body>
   <div class="container">
     <div class="form-modal">
-    
+    <h2 class="login-sarva-logo">Sarvagnya</h2>
     <div class="form-toggle">
-        <button id="login-toggle">log in to your account</button>
+        
+        <h3 id="loginator" >Loginator!!</h3>
     </div>
 
     <div id="login-form">
         <form>
           
-            <hr/>
-            <button type="button" onclick="window.location = '<?php echo $loginURL ?>';" class="btn -box-sd-effect"> <i class="fa fa-google fa-lg" aria-hidden="true"></i> <span class="text">sign in with google</span> </button>
+            <button type="button" onclick="window.location = '<?php echo $loginURL ?>';" class="google-login-btn"> <i class="fa fa-google fa-lg" aria-hidden="true"></i> <span class="text google-login-btn-text">sign in with google</span> </button>
          
         </form>
     </div>

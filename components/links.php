@@ -15,6 +15,18 @@
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
 
 
+<!-- Google fonts api -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- jetbrains font -->
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+
+<!-- Shantell Sans font -->
+<link href="https://fonts.googleapis.com/css2?family=Shantell+Sans&display=swap" rel="stylesheet">
+
+
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
@@ -22,10 +34,28 @@
 
 <!-- External CSS Stylesheet Link -->
 <link rel="stylesheet" href="assets/css/style.css">
-<link rel="icon" type="image/x-icon" href="assets/images/logo2.png">
+<link rel="icon" type="image/x-icon" href="assets/images/web-logo.png">
 
 <!-- Slider Stylesheet Link -->
 <link rel="stylesheet" href="assets/css/lightslider.css">
+
+
+<style>
+
+  @font-face {
+      font-family: blackpast;
+      src: url('/assets/fonts/blackpastdemo-vm2l9-webfont.woff');
+  }
+  @font-face {
+      font-family: researcher;
+      src: url('/assets/fonts/researcher-researcher-regular-400-webfont.woff');
+  }
+  @font-face {
+      font-family: mynerva;
+      src: url('/assets/fonts/mynerve-regular-webfont.woff');
+  }
+
+</style>
 
 <!-- JQuery CDN Link -->
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
@@ -45,6 +75,8 @@
     integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
 <link rel="stylesheet" href="https://unpkg.com/placeholder-loading/dist/css/placeholder-loading.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GF2R27KXWC"></script>

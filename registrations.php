@@ -19,13 +19,36 @@ require_once "components/database.php";
     <?php require_once 'components/links.php'; ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <style>
-    .title {
-        font-family: "Ubuntu", sans-serif !important;
+    body{
+        background: rgb(70,5,48);
+        background: linear-gradient(-45deg, rgba(70,5,48,1) 0%, rgba(0,0,0,1) 38%, rgba(17,32,72,1) 99%);
+        
+    }
+    .registrations-body{
+        min-height: 60vh;
+    }
+    .registration-title{
+        font-family: "Ubuntu", sans-serif !important; 
+        color: rgb(211, 205, 209);
     }
 
     .card {
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     }
+    .registrations-card{
+        background: rgba(255, 255, 255, 0.119);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        z-index: 1;
+        transform: 0.5s;
+        color: #fff;
+        
+    }
+    .registrations-card .card-body{
+        color: #e6e3e3ca;
+    }
+    
     </style>
 </head>
 
@@ -37,17 +60,17 @@ require_once "components/database.php";
     <br><br><br><br>
 
 
-    <div class="container">
+    <div class="container registrations-body">
         <div class="">
-            <h2 class=" title">Registrations</h2>
-            <hr>
+            <h2 class="title registration-title">Registrations</h2>
+            <hr style="border-color: rgb(80, 81, 81);">
         </div>
         
         <?php
         if($auth){
         
         ?>
-        <div class="row">
+        <div class="row ">
             <?php
             $user_id = $_SESSION['id'];
             $query = "SELECT * FROM transactions where user_id='$user_id'";
@@ -67,7 +90,7 @@ require_once "components/database.php";
             <div class="col-md-4">
 
 
-                <div class="card my-2">
+                <div class="card registrations-card my-2">
                     <div class="card-body title">
                         <?php
                             $event_id = $row['event_id']; 
@@ -76,7 +99,7 @@ require_once "components/database.php";
                             $row1 = mysqli_fetch_assoc($query_run1)
                          ?>
                         <h4><?php echo $row1['title'] ?></h4>
-                        <p><b><span class="text-dark">Payment Id : </span></b> <?php echo $row['payment_id']; ?></p>
+                        <p><b><span class="text-success">Payment Id : </span></b> <?php echo $row['payment_id']; ?></p>
                         <p><b><span class="text-success">Amount Paid : </span> </b><?php echo $row['amount']; ?> /-</p>
                         <p><b>Txn time : </b><?php echo $row['txn_time']; ?></p>
                     </div>
@@ -138,10 +161,12 @@ require_once "components/database.php";
 
 
     <?php require_once 'components/footer.php'; ?>
-    <!-------- Mobile nav-------->
 
-    <?php require_once 'components/mobile-nav.php'; ?>
-
+    <!-- navbar visibility -->
+<script>
+    const navbar = document.querySelector('#navbar');
+    navbar.classList.add('visible');
+</script>
 
 </body>
 

@@ -14,7 +14,7 @@ require_once "components/database.php";
 <html lang="en">
 
 <head>
-    <title>Sarvagnya - 2022</title>
+    <title>Sarvagnya - 2023</title>
 
     <?php require_once 'components/links.php'; ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,7 +52,7 @@ require_once "components/database.php";
             policies peroidcally for updates. The time of the last update will be listed at the bottom of this privacy
             policy page.</p>
         <p>We use your data to provide anf improve our service. Terms used in this privacy policy have the terms and
-            conditions accessable from https://sarvagnya2k22.in</p>
+            conditions accessable from https://sarvagnya2k23.in</p>
 
         <h3 class="text-dark  title">Information collection</h3>
         <p>We Collect serveal different types of information for various purposes to provide and improve our services to
@@ -121,8 +121,7 @@ require_once "components/database.php";
             and accessing the services.</p>
         <h3 class="text-dark  title">Contact Us</h3>
         <p>If You have any questions about the privacy policy,please Contact Us:</p>
-        <p>By Email: sarvganya2k22cse@gmail.com</p>
-        <p>By phone: +91 9110762518</p>
+        <p>By Email: sarvganya2k23cse@gmail.com</p>
     </div>
 
 
@@ -139,10 +138,13 @@ require_once "components/database.php";
 
 
     <?php require_once 'components/footer.php'; ?>
-    <!-------- Mobile nav-------->
+    
+<!-- navbar visibility -->
 
-    <?php require_once 'components/mobile-nav.php'; ?>
-
+<script>
+    const navbar = document.querySelector('#navbar');
+    navbar.classList.add('visible');
+</script>
 
 </body>
 

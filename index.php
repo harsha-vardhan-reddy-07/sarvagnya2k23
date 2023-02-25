@@ -21,220 +21,487 @@ require_once "components/database.php";
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
     <style>
-    .title{
-        font-family:"Ubuntu","Lato" !important;
-    }
-    /*===== Vertical Timeline =====*/
-    #conference-timeline {
-        position: relative;
-        max-width: 920px;
-        width: 100%;
-        margin: 0 auto;
-    }
+    
 
-    #conference-timeline .timeline-start,
-    #conference-timeline .timeline-end {
-        display: table;
-        font-family: "Ubntu", sans-serif;
-        font-size: 18px;
-        font-weight: 900;
-        text-transform: uppercase;
-        background: #00b0bd;
-        padding: 15px 23px;
-        color: #fff;
-        max-width: 5%;
-        width: 100%;
-        text-align: center;
-        margin: 0 auto;
-    }
+    @font-face {
+            font-family: blackpast;
+            src: url('./assets/fonts/blackpastdemo-vm2l9-webfont.woff');
+        }
+        @font-face {
+            font-family: researcher;
+            src: url('./assets/fonts/researcher-researcher-regular-400-webfont.woff');
+        }
+        @font-face {
+            font-family: mynerva;
+            src: url('./assets/fonts/mynerve-regular-webfont.woff');
+        }
 
-    #conference-timeline .conference-center-line {
-        position: absolute;
-        width: 3px;
-        height: 100%;
-        top: 0;
-        left: 50%;
-        margin-left: -2px;
-        background: #00b0bd;
-        z-index: -1;
-    }
+        html {
+            scroll-behavior: smooth;
+        }
 
-    #conference-timeline .conference-timeline-content {
-        padding-top: 67px;
-        padding-bottom: 67px;
-    }
 
-    .timeline-article {
-        width: 100%;
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-        margin: 20px 0;
-    }
-
-    .timeline-article .content-left-container,
-    .timeline-article .content-right-container {
-        max-width: 44%;
-        width: 100%;
-    }
-
-    .timeline-article .timeline-author {
-        display: block;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 24px;
-        color: #242424;
-        text-align: right;
-    }
-
-    .timeline-article .content-left,
-    .timeline-article .content-right {
-        position: relative;
-        width: auto;
-        border: 1px solid #ddd;
-        background-color: #fff;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, .03);
-        padding: 27px 25px;
-            margin-right: 10px;
-    }
-
-    .timeline-article p {
-        margin: 0 0 0 60px;
-        padding: 0;
-        font-weight: 400;
-        color: #242424;
-        font-size: 14px;
-        line-height: 24px;
-        position: relative;
-    }
-
-    .timeline-article p span.article-number {
-        position: absolute;
-        font-weight: 300;
-        font-size: 44px;
-        top: 10px;
-        left: -60px;
-        color: #00b0bd;
-    }
-
-    .timeline-article .content-left-container {
-        float: left;
-    }
-
-    .timeline-article .content-right-container {
-        float: right;
-    }
-
-    .timeline-article .content-left:before,
-    .timeline-article .content-right:before {
-        position: absolute;
-        top: 20px;
-        font-size: 23px;
-        font-family: "FontAwesome";
-        color: #fff;
-    }
-
-    .timeline-article .content-left:before {
-        content: "\f0da";
-        right: -8px;
-    }
-
-    .timeline-article .content-right:before {
-        content: "\f0d9";
-        left: -8px;
-    }
-
-    .timeline-article .meta-date {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        width: 62px;
-        height: 62px;
-        margin-left: -31px;
-        color: #fff;
-        border-radius: 100%;
-        background: #00b0bd;
-    }
-
-    .timeline-article .meta-date .date,
-    .timeline-article .meta-date .month {
-        display: block;
-        text-align: center;
-        font-weight: 900;
-    }
-
-    .timeline-article .meta-date .date {
-        font-size: 30px;
-        line-height: 40px;
-    }
-
-    .timeline-article .meta-date .month {
-        font-size: 18px;
-        line-height: 10px;
-    }
-
-    /*===== // Vertical Timeline =====*/
-
-    /*===== Resonsive Vertical Timeline =====*/
-    @media only screen and (max-width: 830px) {
-
-        #conference-timeline .timeline-start,
-        #conference-timeline .timeline-end {
+        body{
             margin: 0;
+            padding: 0;
+            background: rgb(70,5,48);
+            background: linear-gradient(-45deg, rgb(50, 3, 34) 0%, rgba(0,0,0,1) 38%, rgba(17,32,72,1) 99%);
+            background-attachment: fixed;
         }
 
-        #conference-timeline .conference-center-line {
-            margin-left: 0;
-            left: 50px;
+        /* Scroll bar */
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #d97e7e;
+            border-radius: 10px;
+            border: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: #e8e8e800;
+            display: none;
+        }
+    
+            /* home page-main */
+
+            .home-hero-container{
+            height: 100vh;
         }
 
-        .timeline-article .meta-date {
-            margin-left: 0;
-            left: 20px;
+        .home_bg_video{
+            object-fit: cover;
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+            z-index: 1;
+            filter:brightness(45%);
+        }
+        .hero-content{
+            z-index: 2;
+            position: relative;
+            text-align: center;
+        }
+        .hero-content h1{
+            font-family: researcher;
+            font-size: 6rem;
+            font-weight: 600;
+            background-image: linear-gradient(rgba(255, 255, 255, 1) 65%, rgba(20, 17, 17, 0.89) 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+            padding-top: 30vh;
+        }
+        .hero-content h3{
+            font-family: researcher;
+            font-size: 2rem;
+            font-weight: 600;
+            background-image: linear-gradient(rgba(255, 240, 240, 0.8) 48.96%, rgba(101, 75, 89, 0.7) 100%);
+            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text;
+        }
+        .hero-content p{
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: rgba(224, 238, 249, 0.811);
+            padding-top: 10vh;
+            padding-bottom: 5vh;
+        }
+        .hero-content a{
+            
+            font-size: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: rgb(224, 238, 249);
+            
+            padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+            background: #2585CF;
+            background: linear-gradient(to bottom right, #2585CF 21%, #CF25BE 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            border: 1px solid #ffebeb9b;
+            border-radius: 20px;
+
+        }
+        .hero-explore-btn:hover{
+            text-decoration: none;
+            background-color: rgb(34, 82, 123);
+            color: #2585CF;
+            
         }
 
-        .timeline-article .content-left-container,
-        .timeline-article .content-right-container {
+        @media screen and (max-width: 1000px){
+            .hero-content h1{
+                font-size: 3.5rem;
+            }
+        }
+        @media screen and (max-width: 600px){
+            .hero-content h1{
+                font-size: 2rem;
+                padding-top: 40vh;
+                background-image: linear-gradient(rgba(255, 255, 255, 1) 65%, rgba(71, 71, 71, 0.89) 100%);
+            }
+            .hero-content h3{
+                font-size: 1.3rem;
+            }
+            .hero-content p{
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+            .hero-content a{
+                position: absolute;
+                top: 80vh;
+                left: 25%;
+                width: 50%;
+            }
+            
+        }
+        
+
+        /* sponsors page */
+        .sponsors-page{
+            height: 100vh;
+            background-color: transparent;
+            padding-top: 10vh;
+            text-align: center;
+        }
+        .sponsors-page h1{
+            color: aliceblue;
+            font-family: blackpast;
+            padding-top: 5%;
+            font-size: 2.5rem;
+        }
+        .sponsors-page p{
+            color: rgba(240, 248, 255, 0.42);
+            padding-top: 15%;
+            font-size: 1rem;
+        }
+        @media screen and (max-width:700px){
+            .sponsors-page p{
+                padding-top: 30vh;
+            }
+        }
+
+        /* memories page */
+        
+        .memories-page{
+            min-width: 100%;
             max-width: 100%;
-            width: auto;
-            float: none;
-            margin-left: 110px;
-            min-height: 53px;
+            height: 90vh;
+            background-color: transparent;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            overflow: hidden;
+            font-family: mynerva;
         }
 
-        .timeline-article .content-left-container {
-            margin-bottom: 20px;
+        .memories-page h1{
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-family: blackpast !important;
+            color: #fff;
         }
 
-        .timeline-article .content-left,
-        .timeline-article .content-right {
-            padding: 10px 25px;
-            min-height: 65px;
+
+        .memories-page div:nth-child(1){
+            margin-left: 2rem;
         }
 
-        .timeline-article .content-left:before {
-            content: "\f0d9";
-            right: auto;
-            left: -8px;
+        .memories-page div:nth-child(2){
+            margin-right: 2rem;
+            text-align: center;
+            color: #ecf7ffdd;
         }
 
-        .timeline-article .content-right:before {
-            display: none;
-        }
-    }
-
-    @media only screen and (max-width: 400px) {
-        .timeline-article p {
-            margin: 0;
+        .memories-page div:nth-child(2) p{
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
         }
 
-        .timeline-article p span.article-number {
-            display: none;
+        .memories-page div:nth-child(2) p span{
+            color: #78bde7be;
         }
 
-    }
+        .memories-page div:nth-child(2) a{
+            color: #8dccf3c8;
+            font-size: 1.2rem;
+            border: 0;
+            outline: 0;
+            border: 1px solid #8dccf3c8;
+            border-radius: 5rem;
+            padding: 1rem 1rem;
+            text-decoration: none;
+            margin: 1rem 0 2rem 0;
+        }
 
-    /*===== // Resonsive Vertical Timeline =====*/
+        .memories-page div:nth-child(2) a:hover{
+            cursor: pointer;
+            background-color: #8dccf31d;
+            border-color: #8dccf336;
+            color: #e7eefd;
+        }
+
+        .youtube--container{
+            width: 40vw;
+            height: 315px;
+            border-radius: 0.5rem;
+        }
+        @media screen and (max-width: 1100px){
+            .memories-page{
+                flex-direction: column-reverse;
+                justify-content: center;
+                align-items: center;
+                gap: 0;
+            }
+            .memories-page div:nth-child(2){
+                margin-right: 0;
+            }
+
+            .memories-page h1{
+                font-size: 1.8rem;
+                margin-bottom: 0rem;
+            }
+
+            .youtube--container{
+                height: 220px;
+                width: 320px;
+                margin-left: 0;
+                margin-top: 15%;
+            }
+
+            .memories-page p{
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+
+            .memories-page div:nth-child(2) p{
+                font-size: 1.25rem;
+                margin-top: 1.5rem;
+            }
+
+            .memories-page div:nth-child(1){
+                margin-right: 2rem;
+            }
+        }
+            
+
+        /* workshop section */
+
+        .workshop-page{
+            height: 90vh;
+            background-image: url('./assets/images/home-page/workshop-bg.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .workshop-page h1{
+            color: rgb(255, 255, 255);
+            font-family: blackpast;
+            padding-top: 10%;
+            font-size: 2.5rem;
+        }
+        .workshop-page p{
+            padding: 1.5% 17% 0 17%;
+            color: #edf3ffb4;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .workshop-typing{
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.2rem !important;
+            color: #f5f8ffee !important;
+            font-weight: 400 !important;
+        }
+        .workshop-page a{
+            
+            font-size: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: rgba(193, 219, 239, 0.817);
+            
+            padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+            margin-top: 5%;
+            border: 1px solid #ffebeb9b;
+            border-radius: 20px;
+
+        }
+        .hero-workshop-btn:hover{
+            cursor: pointer;
+            background-color: #8dccf31d;
+            border-color: #8dccf336;
+            color: #e7eefd;
+            
+        }
+
+        @media screen and (max-width:700px) {
+            .workshop-page h1{
+                padding-top: 55%;
+            }
+            .workshop-page p{
+                padding: 1.5% 5% 0 5% !important;
+                font-size: 0.7rem;
+            }
+            .workshop-page a{
+                position: absolute;
+                top: 70vh;
+                left: 25%;
+                width: 50%;
+            }
+        }
+    
+    /* Technical Events */
+
+    .techeve-page{
+            height: 90vh;
+            background-image: url('./assets/images/home-page/techeve-bg.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .techeve-page h1{
+            color: rgb(255, 255, 255);
+            font-family: blackpast;
+            padding-top: 10%;
+            font-size: 2.5rem;
+        }
+        .techeve-page p{
+            padding: 1.5% 17% 0 17%;
+            color: #edf3ffb4;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        .Technical-typing{
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.2rem !important;
+            color: #f5f8ffee !important;
+            font-weight: 400 !important;
+        }
+        .techeve-page a{
+            
+            font-size: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: rgba(193, 219, 239, 0.817);
+            
+            padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+            margin-top: 5%;
+            border: 1px solid #ffebeb9b;
+            border-radius: 20px;
+
+        }
+        .hero-technical-btn:hover{
+            cursor: pointer;
+            background-color: #8dccf31d;
+            border-color: #8dccf336;
+            color: #e7eefd;
+            
+        }
+
+        @media screen and (max-width:700px) {
+            .techeve-page h1{
+                padding-top: 55%;
+            }
+            .techeve-page p{
+                padding: 1.5% 5% 0 5% !important;
+                font-size: 0.7rem;
+            }
+            .techeve-page a{
+                position: absolute;
+                top: 70vh;
+                left: 25%;
+                width: 50%;
+            }
+        }
+
+        /* Cultural Events */
+
+    .cultural-page{
+            height: 90vh;
+            background-image: url('./assets/images/home-page/cultural-bg.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .cultural-page h1{
+            
+            font-family: 'Shantell Sans', cursive;
+            font-weight: 600;
+            padding-top: 10%;
+            font-size: 2.5rem;
+            background: linear-gradient(180deg, #84B9F9 70%, rgba(242, 126, 126, 0.5) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+
+
+            text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        .cultural-page p{
+            padding: 1.5% 17% 0 17%;
+            font-family: 'Shantell Sans', cursive;
+            font-size: 1rem;
+            font-weight: bold;
+            background: linear-gradient(90deg, #84B9F9 17.97%, rgba(153, 54, 189, 0.847) 46.33%, rgba(242, 126, 126, 0.587) 79.15%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        .cultural-page a{
+            
+            font-size: 1rem;
+            font-family: mynerva;
+            color: rgba(193, 219, 239, 0.817);
+            
+            padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+            margin-top: 5%;
+            border: 1px solid #ffebeb9b;
+            border-radius: 20px;
+
+        }
+        .hero-cultural-btn:hover{
+            cursor: pointer;
+            background-color: #8dccf31d;
+            border-color: #8dccf336;
+            color: #e7eefd;
+            
+        }
+
+        @media screen and (max-width:700px) {
+            .cultural-page h1{
+                padding-top: 60%;
+            }
+            .cultural-page p{
+                padding: 1.5% 5% 0 5% !important;
+                font-size: 0.7rem;
+            }
+            .cultural-page a{
+                margin-top: 15%;
+            }
+        }
+        
+
+
+
     </style>
 
 
@@ -242,389 +509,242 @@ require_once "components/database.php";
 
 <body>
 
+<?php require_once 'components/navbar.php'; ?>
+   
 
-    <?php require_once 'components/hero.php'; ?>
+      <!-- Hero page -->
 
+      <section class="home-hero-container ">
+        <video autoplay muted loop class="home_bg_video">
+            <source src="./assets/videos/bg-vid-new.mp4" type="video/mp4" />
+        </video>
 
-
-    <?php require_once 'components/slider.php'; ?>
-    <?php require_once 'components/navbar.php'; ?>
-
-
-    <br>
-    <br>
-    <h2 class=" font-weight-bold text-center title">Events Schedule</h2>
-    <br>
-    <!-- Vertical Timeline -->
-    <section id="conference-timeline">
-        <div class="timeline-start">Start</div>
-        <div class="conference-center-line"></div>
-        <div class="conference-timeline-content">
-            <!-- Article -->
-            <div class="timeline-article mr-2 title">
-                <div class="content-left-container">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary">9:00 AM -
-                                11:00
-                                AM</span> </h6>
-                        <h6 class="font-weight-bold">Inaguration</h6>
-                    </div>
-
-                </div>
-                <div class="content-right-container">
-                    <div class="content-right">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary">11:00 AM - 11:15
-                                AM</span>
-                        </h6>
-                        <h6 class="font-weight-bold">Break</h6>
-                    </div>
-                </div>
-                <div class="content-left-container mt-2">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-success">11:15 AM - 1:00
-                                PM</span></h6>
-                        <h6 class="font-weight-bold text-info">Workshop</h6>
-                    </div>
-                </div>
-                <div class="content-right-container mt-2">
-                    <div class="content-right">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-success"> 11:15 AM - 1:00
-                                PM </span>
-                        </h6>
-                        <h6 class="font-weight-bold">General Quiz (Round 1) / Paper Presentation</h6>
-                    </div>
-                </div>
-                <div class="content-left-container mt-2">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary">1:00 PM - 2:00
-                                PM</span></h6>
-                        <h6 class="font-weight-bold">Lunch Break</h6>
-                    </div>
-                </div>
-                <div class="content-right-container mt-2">
-                    <div class="content-right">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-success"> 2:00 PM - 3:30
-                                PM </span>
-                        </h6>
-                        <h6 class="font-weight-bold text-info">Workshop</h6>
-                    </div>
-                </div>
-                <div class="content-left-container mt-2">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-success">2:00 PM - 3:30
-                                PM</span></h6>
-                        <h6 class="font-weight-bold">Paper Presentation</h6>
-                    </div>
-                </div>
-                <div class="content-right-container mt-2">
-                    <div class="content-right">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary"> 3:30 PM - 3:45
-                                PM </span>
-                        </h6>
-                        <h6 class="font-weight-bold">Snacks</h6>
-                    </div>
-                </div>
-                <div class="content-left-container mt-2">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-success">3:45 PM - 5:00
-                                PM</span></h6>
-                        <h6 class="font-weight-bold text-info">Workshop</h6>
-                    </div>
-                </div>
-                <div class="content-right-container mt-2">
-                    <div class="content-right">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-success"> 3:45 PM - 5:00
-                                PM </span>
-                        </h6>
-                        <h6 class="font-weight-bold">Technical Quiz (Round 1)</h6>
-                    </div>
-                </div>
-                <div class="content-left-container mt-2">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-success">5:00 PM - 7:00
-                                PM</span></h6>
-                        <h6 class="font-weight-bold">Flashmob</h6>
-                    </div>
-                </div>
-                <div class="content-right-container mt-2">
-                    <div class="content-right">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-success"> 5:00 PM - 7:00
-                                PM </span>
-                        </h6>
-                        <h6 class="font-weight-bold">Spot Events</h6>
-                    </div>
-                </div>
-                <div class="content-left-container mt-2">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary">7:00 PM - 8:00
-                                PM</span></h6>
-                        <h6 class="font-weight-bold">Dinner</h6>
-                    </div>
-                </div>
-                <div class="content-right-container mt-2">
-                    <div class="content-right">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary"> 8:00 PM - 10:00
-                                PM </span>
-                        </h6>
-                        <h6 class="font-weight-bold text-info">Workshop</h6>
-                    </div>
-                </div>
-                <div class="meta-date">
-                    <span class="date">28</span>
-                    <span class="month">APR</span>
-                </div>
-            </div>
-            <!-- // Article -->
-            <hr>
-            <!-- Article -->
-            <div class="timeline-article title">
-
-                <div class="content-left-container mt-2 title">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary">9:00 AM - 11:00
-                                AM</span></h6>
-                        <h6 class="font-weight-bold">Coding Challenge</h6>
-                    </div>
-                </div>
-                <div class="content-right-container mt-2">
-                    <div class="content-right">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary"> 11:00 AM - 11:15
-                                AM </span>
-                        </h6>
-                        <h6 class="font-weight-bold text-info">Break</h6>
-                    </div>
-                </div>
-
-
-                <div class="content-left-container mt-2">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-success">11:15 AM - 1:00
-                                PM</span></h6>
-                        <h6 class="font-weight-bold text-info">Workshop</h6>
-                    </div>
-                </div>
-                <div class="content-right-container mt-2">
-                    <div class="content-right">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-success">11:15 AM - 1:00
-                                PM </span>
-                        </h6>
-                        <h6 class="font-weight-bold">General Quiz (Round 2) / Poster Presentation</h6>
-                    </div>
-                </div>
-
-
-                <div class="content-left-container mt-2">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary">1:00 PM - 2:00
-                                PM</span></h6>
-                        <h6 class="font-weight-bold">Lunch Break</h6>
-                    </div>
-                </div>
-                <div class="content-right-container mt-2">
-                    <div class="content-right">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-success">2:00 PM - 5:00
-                                PM </span>
-                        </h6>
-                        <h6 class="font-weight-bold text-info">Workshop</h6>
-                    </div>
-                </div>
-
-                <div class="content-left-container mt-2">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-success">2:00 PM - 5:00
-                                PM</span></h6>
-                        <h6 class="font-weight-bold">Encoding & Decoding (Round 1)</h6>
-                    </div>
-                </div>
-                <div class="content-right-container mt-2">
-                    <div class="content-right">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary">5:00 PM - 6:00
-                                PM </span>
-                        </h6>
-                        <h6 class="font-weight-bold">Spot Events</h6>
-                    </div>
-                </div>
-                <div class="content-left-container mt-2">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary">6:00 PM - 8:00
-                                PM</span></h6>
-                        <h6 class="font-weight-bold">Culturals</h6>
-                    </div>
-                </div>
-
-
-                <div class="meta-date">
-                    <span class="date">29</span>
-                    <span class="month">APR</span>
-                </div>
-            </div>
-            <hr>
-            <!-- // Article -->
-            <!-- Article -->
-            <div class="timeline-article title">
-
-
-                <div class="content-left-container mt-2 title">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-success">9:00 AM - 11:00
-                                AM</span></h6>
-                        <h6 class="font-weight-bold text-info">Workshop</h6>
-                    </div>
-                </div>
-                <div class="content-right-container mt-2">
-                    <div class="content-right">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-success"> 9:00 AM - 11:00
-                                AM </span>
-                        </h6>
-                        <h6 class="font-weight-bold">Encoding & Decoding (Round 2)</h6>
-                    </div>
-                </div>
-
-                <div class="content-left-container mt-2">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary">11:00 AM - 12:00
-                                PM</span></h6>
-                        <h6 class="font-weight-bold">Capture The Flag</h6>
-                    </div>
-                </div>
-                <div class="content-right-container mt-2">
-                    <div class="content-right">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary"> 12:00 PM - 1:00
-                                PM </span>
-                        </h6>
-                        <h6 class="font-weight-bold">Technical Quiz (Round 2)</h6>
-                    </div>
-                </div>
-
-                <div class="content-left-container mt-2">
-                    <div class="content-left">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary">1:00 PM - 2:00
-                                PM</span></h6>
-                        <h6 class="font-weight-bold">Lunch Break</h6>
-                    </div>
-                </div>
-                <div class="content-right-container mt-2">
-                    <div class="content-right">
-                        <h6 class="text-left font-weight-bold"> <span class="text-dark">Time : </span> <span
-                                class="text-secondary"> 2:00 PM - 4:00
-                                PM </span>
-                        </h6>
-                        <h6 class="font-weight-bold">Validatory</h6>
-                    </div>
-                </div>
-
-
-
-
-                <div class="meta-date">
-                    <span class="date">30</span>
-                    <span class="month">APR</span>
-                </div>
-            </div>
-            <!-- // Article -->
-
-            <!-- // Article -->
+        <div class="hero-content text-center">
+            <h1 class="hero-title">SARVAGNYA</h1>
+            <h3>2k23</h3>
+            <p><span id="text"></span>_</p>
+            <a class="btn hero-explore-btn" href="#memories-page">Explore more!!</a>
+            
         </div>
-        <div class="timeline-end">End</div>
     </section>
-    <!-- // Vertical Timeline -->
-
-<p class="d-none"> Code : 5678</p>
-
-    <br>
-    <br>
 
 
+    <!-- Sponsors page -->
+
+    <section class="sponsors-page">
+        <h1>Our Sponsors</h1>
+        <p>Will be updated shortly....!</p>
+    </section>
+
+
+    <!-- Memories page -->
+
+    <div></div>
+ 
+    <section id="memories-page" class="memories-page" data-scroll-section="">
+        <div>
+        <iframe  src="https://www.youtube.com/embed/zFmS-JLMeJM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen class="youtube--container"></iframe>
+        </div>
+        <div>
+        <h1>FLASHBACK CHRONICLES</h1>
+        <p>Get ready to time travel down memory lane as we revisit the mind-blowing moments from past editions of <span>Sarvagnya</span> - our tech fest extravaganza!</p>
+        <a href="#">Let's time travel...!</a>
+        </div>
+    </section>
+
+
+    <!-- Workshop page -->
+
+    <section class="workshop-page text-center">
+
+        <h1>Workshops</h1>
+        
+        <p>Elevate your tech prowess and let your creativity run wild with Sarvagnya's innovative workshops! Join us and dive into the exciting worlds of <span style="color: #98c7ec9d;"> ethical hacking, data science, and MERN stack.</span> Discover the latest trends and become a tech trailblazer!</p>
+        <p class="workshop-typing"><span id="text-workshop"></span>_</p>
+        <a class="btn hero-workshop-btn" href="events.php#workshops-regi">Join Now!!</a>
+    </section>
+
+    <!-- Technical Events -->
+
+
+    <section class="techeve-page">
+        <h1>Technical Events</h1>
+        <p>Unleash your inner geek at Sarvagnya's technical events! With mind-bending <span style="color: #844d72c8;"> quizzes, coding challenges, and poster presentations,</span> we're taking innovation to the next level. Join us for an insane and unforgettable experience!</p>
+        <p class="Technical-typing"><span id="text-technical"></span>_</p>
+        <a class="btn hero-technical-btn" href="events.php#technical-regi">Join Now!!</a>
+    </section>
+
+
+    <!-- Cultural Events -->
+
+
+    <section class="cultural-page">
+        <h1>Cultural Events</h1>
+        <p>Prepare to unleash your inner wild child, throw caution to the wind and dance like a maniac, sing like a rockstar, and immerse yourself in the electrifying energy of Sarvagnya's mind-blowing cultural events! Let's get crazy, baby!</p>
+        <a class="btn hero-cultural-btn" href="#">Epicventure awaits!!!</a>
+    </section>
 
 
 
-    <?php require_once 'components/footer.php'; ?>
-    <!-------- Mobile nav-------->
+    <!-- Schedule -->
 
-    <?php require_once 'components/mobile-nav.php'; ?>
+    <section class="cultural-events-page">
+
+    </section>
+
+
+
+<?php require_once 'components/footer.php'; ?>
+
+
+
+    <!-- navbar script -->
+    
+    <script>
+    const navbar = document.querySelector('#navbar');
+    const main = document.querySelector('main');
+    
+    function toggleNavbar() {
+      if (window.scrollY > 100) {
+        navbar.classList.add('visible');
+      } else {
+        navbar.classList.remove('visible');
+      }
+    }
+    
+    window.addEventListener('scroll', toggleNavbar);
+</script>
+
+<!-- Typing effect script -->
+
+<script type="text/javascript">
+
+    var _CONTENT = ["Welcome to the Tech fest organized by CSE", "Get ready to Explore the knowledge" ];
+    var _PART = 0;
+    var _PART_INDEX = 0;
+    var _INTERVAL_VAL;
+    var _ELEMENT = document.querySelector("#text");
+    function Type() { 
+        var text =  _CONTENT[_PART].substring(0, _PART_INDEX + 1);
+        _ELEMENT.innerHTML = text;
+        _PART_INDEX++;
+        if(text === _CONTENT[_PART]) {
+            clearInterval(_INTERVAL_VAL);
+            setTimeout(function() {
+                _INTERVAL_VAL = setInterval(Delete, 50);
+            }, 1000);
+        }
+    }
+    function Delete() {
+        var text =  _CONTENT[_PART].substring(0, _PART_INDEX - 1);
+        _ELEMENT.innerHTML = text;
+        _PART_INDEX--;
+        if(text === '') {
+            clearInterval(_INTERVAL_VAL);
+            if(_PART == (_CONTENT.length - 1))
+                _PART = 0;
+            else
+                _PART++;
+            _PART_INDEX = 0;
+            setTimeout(function() {
+                _INTERVAL_VAL = setInterval(Type, 100);
+            }, 200);
+        }
+    }
+    _INTERVAL_VAL = setInterval(Type, 100);
+</script>
+    
+
+<!-- Workshop typing -->
+
+<script type="text/javascript">
+
+    var _CONTENT2 = ["Tech up, level up with Sarvagnya's wild workshops!"];
+    var _PART2 = 0;
+    var _PART_INDEX2 = 0;
+    var _INTERVAL_VAL2;
+    var _ELEMENT2 = document.querySelector("#text-workshop");
+    function Type2() { 
+        var text2 =  _CONTENT2[_PART2].substring(0, _PART_INDEX2 + 1);
+        _ELEMENT2.innerHTML = text2;
+        _PART_INDEX2++;
+        if(text2 === _CONTENT2[_PART2]) {
+            clearInterval(_INTERVAL_VAL2);
+            setTimeout(function() {
+                _INTERVAL_VAL2 = setInterval(Delete2, 50);
+            }, 1000);
+        }
+    }
+    function Delete2() {
+        var text2 =  _CONTENT2[_PART2].substring(0, _PART_INDEX2 - 1);
+        _ELEMENT2.innerHTML = text2;
+        _PART_INDEX2--;
+        if(text2 === '') {
+            clearInterval(_INTERVAL_VAL2);
+            if(_PART2 == (_CONTENT2.length - 1))
+                _PART2 = 0;
+            else
+                _PART2++;
+            _PART_INDEX2 = 0;
+            setTimeout(function() {
+                _INTERVAL_VAL2 = setInterval(Type2, 100);
+            }, 200);
+        }
+    }
+    _INTERVAL_VAL2 = setInterval(Type2, 100);
+</script>
+
+
+<!-- Technical-Eve typing -->
+
+<script type="text/javascript">
+
+    var _CONTENT3 = ["Embrace the Madness at Sarvagnya's Technical Events!"];
+    var _PART3 = 0;
+    var _PART_INDEX3 = 0;
+    var _INTERVAL_VAL3;
+    var _ELEMENT3 = document.querySelector("#text-technical");
+    function Type3() { 
+        var text3 =  _CONTENT3[_PART3].substring(0, _PART_INDEX3 + 1);
+        _ELEMENT3.innerHTML = text3;
+        _PART_INDEX3++;
+        if(text3 === _CONTENT3[_PART3]) {
+            clearInterval(_INTERVAL_VAL3);
+            setTimeout(function() {
+                _INTERVAL_VAL3 = setInterval(Delete3, 50);
+            }, 1000);
+        }
+    }
+    function Delete3() {
+        var text3 =  _CONTENT3[_PART3].substring(0, _PART_INDEX3 - 1);
+        _ELEMENT3.innerHTML = text3;
+        _PART_INDEX3--;
+        if(text3 === '') {
+            clearInterval(_INTERVAL_VAL3);
+            if(_PART3 == (_CONTENT3.length - 1))
+                _PART3 = 0;
+            else
+                _PART3++;
+            _PART_INDEX3 = 0;
+            setTimeout(function() {
+                _INTERVAL_VAL3 = setInterval(Type3, 100);
+            }, 200);
+        }
+    }
+    _INTERVAL_VAL3 = setInterval(Type3, 100);
+</script>
+    
+    
+
+
+<!-- bootstrap script -->
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 
 
 </body>
-
 </html>
-
-
-
-<script>
-$(document).ready(function() {
-    $('#autoWidth,#autoWidth2').lightSlider({
-        autoWidth: true,
-        loop: true,
-        onSliderLoad: function() {
-            $('#autoWidth,#autoWidth2').removeClass('cS-hidden');
-        }
-    });
-});
-</script>
-
-
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Apr 28, 2022 22:56:00").getTime();
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-    // Get today's date and time
-    var now = new Date().getTime();
-
-    // Find the distance between now and the count down date
-    var distance = countDownDate - now;
-
-    // Time calculations for days, hours, minutes and seconds
-    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-
-    if (days == 0) {
-        document.getElementById("demo").innerHTML = hours + "h " +
-            minutes + "m " + seconds + "s ";
-    } else if (days == 0 && hours == 0) {
-        document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s ";
-    } else {
-        document.getElementById("demo").innerHTML = days + "d " + hours + "h " +
-            minutes + "m " + seconds + "s ";
-    }
-
-    // If the count down is over, write some text 
-    if (distance < 0) {
-        clearInterval(x);
-        document.getElementById("demo").innerHTML = "Live Now";
-    }
-}, 1000);
-</script>

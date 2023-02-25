@@ -14,7 +14,7 @@ require_once "components/database.php";
 <html lang="en">
 
 <head>
-    <title>Sarvagnya - 2022 - About Us</title>
+    <title>Sarvagnya - 2023 - About Us</title>
 
     <?php require_once 'components/links.php'; ?>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -48,17 +48,14 @@ require_once "components/database.php";
             Project Presentations, Hackathons, various events and new events are being added every year.
         </p>
         <p>Students From Any college can participate in all events by paying entry fee for respective Events.</p>
-        <p>Services Provided in Sarvagnya 2k22 are :</p>
+        <p>Services Provided in Sarvagnya 2k23 are :</p>
         <ul>
             <li>Data Science Workshop</li>
             <li>Mern Full Stack Workshop</li>
-            <li>RPA Tool Workshop</li>
+            <li>Ethical Hacking Workshop</li>
             <li>Paper Presentation</li>
             <li>Poster Presentation</li>
-            <li>Technical Quiz</li>
-            <li>General Quiz</li>
-            <li>Encoding & Decoding</li>
-            <li>Capture The Flag</li>
+            <li>Technical Quiz and many more...</li>
         </ul>
 
 
@@ -80,9 +77,14 @@ require_once "components/database.php";
 
 
     <?php require_once 'components/footer.php'; ?>
-    <!-------- Mobile nav-------->
+    
 
-    <?php require_once 'components/mobile-nav.php'; ?>
+    <!-- navbar visibility -->
+
+<script>
+    const navbar = document.querySelector('#navbar');
+    navbar.classList.add('visible');
+</script>
 
 
 </body>

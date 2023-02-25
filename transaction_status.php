@@ -99,9 +99,13 @@ else if($status == 'fail')
 
 
     <?php require_once 'components/footer.php'; ?>
-    <!-------- Mobile nav-------->
 
-    <?php require_once 'components/mobile-nav.php'; ?>
+    <!-- navbar visibility -->
+
+<script>
+    const navbar = document.querySelector('#navbar');
+    navbar.classList.add('visible');
+</script>
 
 
 </body>

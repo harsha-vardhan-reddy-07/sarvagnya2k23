@@ -28,7 +28,21 @@ require_once 'components/database.php';
         background: linear-gradient(-45deg, rgba(70,5,48,1) 0%, rgba(0,0,0,1) 38%, rgba(17,32,72,1) 99%);
         
     }
+    /* Scroll bar */
 
+    ::-webkit-scrollbar-thumb {
+            background-color: #d97e7e;
+            border-radius: 10px;
+            border: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: #e8e8e800;
+            display: none;
+        }
     .profile-page-table{
         color: #abadb0; 
         background-color: transparent;

@@ -1,12 +1,12 @@
-<footer id="footer" style="background: #171a29; z-index: 2; position:relative;">
+<footer id="footer" style="background: #0a1028ed; z-index: 2; position:relative;">
     <div class="footer-top">
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-3 col-md-6">
-                    <a class="navbar-brand font-weight-bold" href="index.php">Sarvagnya<span
-                            style="color:#fff;">2023</span> </a>
-                    <div class="social-links">
+                <div class="col-lg-3 col-md-6" style="color:#d3d3d3cf;">
+                    <a class="navbar-brand font-weight-bold" href="index.php" style="color:#d3d3d3cf;">Sarvagnya<span
+                        style="color:#d3d3d3cf;">2023</span> </a>
+                    <div class="social-links" style="color:#d3d3d3cf;">
 
                         <a target="_blank" aria-label="Twitter"
                             href="https://twitter.com/Sarvagnya_2K23" class="facebook"> <i
@@ -23,16 +23,16 @@
 
                 </div>
 
-                <div class="col-lg-3 col-md-6">
-                    <h2 class="info-heading font-weight-bold">Registration Events</h2>
-                    <ul>
+                <div class="col-lg-3 col-md-6" style="color:#d3d3d3cf;">
+                    <h2 class="info-heading font-weight-bold" style="color:#d3d3d3cf;">Registration Events</h2>
+                    <ul style="color:#d3d3d3cf;">
                         <li><a href="<?php echo $base_url ?>/events">Workshop</a></li>
                         <li><a href="<?php echo $base_url ?>/events">Technical Events</a></li>
                         <li><a href="<?php echo $base_url ?>/events">Paper/Poster Presentation</a></li>
                     </ul>
                 <br>
-                    <h2 class="info-heading font-weight-bold">Links</h2>
-                    <ul>
+                    <h2 class="info-heading font-weight-bold" style="color:#d3d3d3cf;">Links</h2>
+                    <ul style="color:#d3d3d3cf;">
                   
                        <li><a href="<?php echo $base_url ?>/terms_of_service.php">Terms Of Service</a></li>
                         <li><a href="<?php echo $base_url ?>/privacy_policy.php">Privacy Policy</a></li>
@@ -42,8 +42,8 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <h2 class="info-heading font-weight-bold">Gallery</h2>
-                    <ul>
+                    <h2 class="info-heading font-weight-bold" style="color:#d3d3d3cf;">Gallery</h2>
+                    <ul style="color:#d3d3d3cf;">
 
                         <li><a href="<?php echo $base_url ?>/gallery-2009">Sarvagnya - 2009</a></li>
                         <li><a href="<?php echo $base_url ?>/gallery-2013">Sarvagnya - 2013</a></li>
@@ -53,8 +53,8 @@
                 </div>
 
                 <div class="col-lg-3 col-md-6">
-                    <h2 class="info-heading font-weight-bold">Quick Links</h2>
-                    <ul>
+                    <h2 class="info-heading font-weight-bold" style="color:#d3d3d3cf;">Quick Links</h2>
+                    <ul style="color:#d3d3d3cf;">
                         <li><a href="<?php echo $base_url ?>/index.php">Home</a></li>
                         <li><a href="<?php echo $base_url ?>/registrations.php">Registrations</a></li>
                         <li><a href="<?php echo $base_url ?>/profile">Profile</a></li>
@@ -67,11 +67,11 @@
             </div>
         </div>
     </div>
-    <hr style="background-color: rgb(187, 187, 187);">
-    <div class="container">
-        <div class="copyright-virtual text-center">
+    <hr style="background-color: rgba(187, 187, 187, 0.71);">
+    <div class="container" style="color:#d3d3d3cf;">
+        <div class="copyright-virtual text-center" style="color:#d3d3d3cf;">
             &copy; <?php echo date('Y') ?> Copyright <strong><a href="https://sarvagnya2k23.in/"
-                    style="color:#fff;">sarvagnya2k23.in</a></strong>. All Rights Reserved
+                    style="color:#d3d3d3cf;">sarvagnya2k23.in</a></strong>. All Rights Reserved
         </div>
     </div>
 </footer>

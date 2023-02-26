@@ -536,6 +536,7 @@ require_once "components/database.php";
         <p>Will be updated shortly....!</p>
     </section>
 
+    <hr style="border: 1px solid #75757571; margin: 0 5%;">
 
     <!-- Memories page -->
 
@@ -548,7 +549,7 @@ require_once "components/database.php";
         <div>
         <h1>FLASHBACK CHRONICLES</h1>
         <p>Get ready to time travel down memory lane as we revisit the mind-blowing moments from past editions of <span>Sarvagnya</span> - our tech fest extravaganza!</p>
-        <a href="#">Let's time travel...!</a>
+        <a href="memories.php">Let's time travel...!</a>
         </div>
     </section>
 

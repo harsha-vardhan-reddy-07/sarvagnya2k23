@@ -37,6 +37,21 @@ require_once "components/database.php";
         }
          */
     }
+    /* Scroll bar */
+
+    ::-webkit-scrollbar-thumb {
+            background-color: #d97e7e;
+            border-radius: 10px;
+            border: 5px;
+        }
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+        ::-webkit-scrollbar {
+            width: 10px;
+            background-color: #e8e8e800;
+            display: none;
+        }
     
     .techEve_bg_video{
         object-fit: cover;

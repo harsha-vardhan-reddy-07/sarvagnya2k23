@@ -67,7 +67,7 @@ require_once "components/database.php";
     
             /* home page-main */
 
-            .home-hero-container{
+        .home-hero-container{
             height: 100vh;
         }
 
@@ -140,9 +140,10 @@ require_once "components/database.php";
         }
         @media screen and (max-width: 600px){
             .hero-content h1{
-                font-size: 2rem;
+                font-size: 2.2rem;
+                font-weight: 600;
                 padding-top: 40vh;
-                background-image: linear-gradient(rgba(255, 255, 255, 1) 65%, rgba(71, 71, 71, 0.89) 100%);
+                background-image: linear-gradient(rgba(255, 255, 255, 1) 87%, rgba(71, 71, 71, 0.89) 100%);
             }
             .hero-content h3{
                 font-size: 1.3rem;
@@ -426,6 +427,11 @@ require_once "components/database.php";
                 width: 50%;
             }
         }
+        @media screen and (max-width:575px) {
+            .techeve-page{
+                height: 92vh;
+            }
+        }
 
         /* Cultural Events */
 
@@ -602,7 +608,7 @@ require_once "components/database.php";
     <!-- navbar script -->
     
     <script>
-    const navbar = document.querySelector('#navbar');
+    const navbar = document.querySelector('#navbar-sarvagnya');
     const main = document.querySelector('main');
     
     function toggleNavbar() {
@@ -740,10 +746,7 @@ require_once "components/database.php";
 
 <!-- bootstrap script -->
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+   
 
 
 

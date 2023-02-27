@@ -92,7 +92,7 @@ body{
 <!-- navbar visibility -->
 
 <script>
-    const navbar = document.querySelector('#navbar');
+    const navbar = document.querySelector('#navbar-sarvagnya');
     navbar.classList.add('visible');
 </script>
     

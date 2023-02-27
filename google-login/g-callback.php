@@ -34,7 +34,7 @@
 
 	$width = "250";
 	$height = "250";
-	$text = "http://localhost/sarva/user_profile.php?id={$id}";
+	$text = "http://localhost/sarva/profile.php?id={$id}";
 $url = "https://chart.googleapis.com/chart?cht=qr&chs={$width}x{$height}&chl={$text}";
 $_SESSION['qr_code'] = $url;
 	// echo $id;

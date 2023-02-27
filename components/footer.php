@@ -9,15 +9,14 @@
                     <div class="social-links" style="color:#d3d3d3cf;">
 
                         <a target="_blank" aria-label="Twitter"
-                            href="https://twitter.com/Sarvagnya_2K23" class="facebook"> <i
-                                class="fa fa-twitter"></i></a>
+                            href="https://twitter.com/Sarvagnya_2K23" class="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a>
                         <a target="_blank" aria-label="Twitter"
                             href="https://www.instagram.com/p/Co_uJL9P50E/?igshid=YmMyMTA2M2Y=" class="instagram"> <i
                                 class="fa fa-instagram"></i></a>
                         <a target="_blank" aria-label="Twitter" href="mailto:sarvagnya2k23cse@gmail.com"
                             class="google-plus"> <i class="fa fa-envelope"></i></a>
                         <a target="_blank" aria-label="Twitter"
-                            href="https://youtube.com/@sarvagnya_2k23" class="linkedin"> <i
+                            href="https://youtube.com/@sarvagnya_2k23" class="youtube"> <i
                                 class="fa fa-youtube"></i></a>
                     </div>
 
